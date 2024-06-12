@@ -41,14 +41,14 @@ function checkAge(age) {
 let resultAge = checkAge(age);
 console.log(resultAge);
 
+// ***** Task 3********************************
+
 class MonthException extends Error {
     constructor(message) {
         super(message);
         this.name = "MonthException";
     }
 }
-
-// ***** Task 3********************************
 
 function showMonthName(month) {
     try {
