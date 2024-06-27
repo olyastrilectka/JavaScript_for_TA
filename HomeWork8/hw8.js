@@ -1,29 +1,30 @@
-//*********************Task1****************
+// //*********************Task1****************
 
-let arr = ["Tom", "Sam", "Ray", "Bob"];
-let [x, y, , ...z] = arr;
-console.log(x);
-console.log(y);
-console.log(z);
+// let arr = ["Tom", "Sam", "Ray", "Bob"];
+// let [x, y, , ...z] = arr;
+// console.log(x);
+// console.log(y);
+// console.log(z);
 
-//*********************Task2********************
+// //*********************Task2********************
 
-let data = {
-    names: ["Sam", "Tom", "Ray", "Bob"],
-    ages: [20, 24, 22, 26],
-};
-let { names, ages } = data;
-let [, name2, , name4] = names;
-let [, age2, , age4] = ages;
+// let data = {
+//     names: ["Sam", "Tom", "Ray", "Bob"],
+//     ages: [20, 24, 22, 26],
+// };
+// let { names, ages } = data;
+// let [, name2, , name4] = names;
+// let [, age2, , age4] = ages;
 
-console.log(name2);
-console.log(age2);
-console.log(name4);
-console.log(age4);
+// console.log(name2);
+// console.log(age2);
+// console.log(name4);
+// console.log(age4);
 
 
-//*********************Task3********************
+// //*********************Task3********************
 function mul(...arguments) {
+    console.log(arguments);
     let result = 1;
     let foundNumber = false;
 
@@ -41,53 +42,88 @@ console.log(mul(1, "str", 2, 3, true));
 console.log(mul(null, "str", false, true));
 
 
-//*********************Task4********************
+// //*********************Task4********************
 
-let server = {
-    data: 0,
-    convertToString: function (callback) {
-        callback(() => {
-            return this.data + "";
-        });
-    }
-};
-let client = {
-    server: server,
-    result: "",
-    calc: function (data) {
-        this.server.data = data;
-        this.server.convertToString(this.notification());
-    },
-    notification: function () {
-        return (callback) => {
-            this.result = callback();
-        };
-    }
-};
-client.calc(123);
-console.log(client.result);
-console.log(typeof client.result);
-
-
-//*********************Task5********************
+// let server = {
+//     data: 0,
+//     convertToString: function (callback) {
+//         callback(() => {
+//             return this.data + "";
+//         });
+//     }
+// };
+// let client = {
+//     server: server,
+//     result: "",
+//     calc: function (data) {
+//         this.server.data = data;
+//         this.server.convertToString(this.notification());
+//     },
+//     notification: function () {
+//         return (callback) => {
+//             this.result = callback();
+//         };
+//     }
+// };
+// client.calc(123);
+// console.log(client.result);
+// console.log(typeof client.result);
 
 
-const keys = [1, 2, 3, 4];
-const values = ["div", "span", "b", "i"];
-const map = mapBuilder(keys, values);
+// //*********************Task5********************
 
-function mapBuilder(keysArray, valuesArray) {
-    const map = new Map();
 
-    for (let i = 0; i < keysArray.length; i++) {
-        map.set(keysArray[i], valuesArray[i]);
-    }
+// const keys = [1, 2, 3, 4];
+// const values = ["div", "span", "b", "i"];
+// const map = mapBuilder(keys, values);
 
-    return map;
-}
-console.log(map);
-console.log(map.size);
-console.log(map.get(2));
+// function mapBuilder(keysArray, valuesArray) {
+//     const map = new Map();
+
+//     for (let i = 0; i < keysArray.length; i++) {
+//         map.set(keysArray[i], valuesArray[i]);
+//     }
+
+//     return map;
+// }
+// console.log(map);
+// console.log(map.size);
+// console.log(map.get(2));
+
+// function printHelloWorld() {
+//     console.log("Hello, World!")
+// }
+
+// printHelloWorld()
+// module.exports = printHelloWorld;
+
+
+// function printOddNumbers(x) {
+
+//     for (let i = 0; i <= x; i++) {
+//         if (i % 2 !== 0) {
+//             console.log(i);
+//         }
+//     }
+// }
+
+
+// printOddNumbers(5);
+
+
+
+// function printOddNumbers1(x) {
+//     let i = 1;  // Починаємо з першого непарного числа
+//     while (i <= x) {
+//         console.log(i);
+//         i += 2;  // Ітеруємо лише через непарні числа, збільшуючи на 2
+//     }
+// }
+
+// printOddNumbers1(5);
+// console.log(printOddNumbers1());
+
+
 
 
 
