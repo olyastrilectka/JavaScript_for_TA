@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const voteButton = document.getElementById('voteButton');
+        const textResult = document.getElementById('result');
+
+        voteButton.addEventListener('click', async () => {
+            try {
+                const response = await fetch('/get-time');
+                if (!response.ok) {
+                    throw new Error('The network response was unsuccessful');
+                }
+                const data = await response.text();
+                textResult.innerText = data;
+            } catch (error) {
+                console.error('Error fetching time:', error);
+            }
+        });
+    });
+
+</script>
+
+
+<body>
+    <button id="voteButton">Vote!</button>
+    <p id="result"></p>
+    <script src="server.js"></script>
+
+
+</body>
+
+</html>
